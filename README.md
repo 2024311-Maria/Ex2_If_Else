@@ -5,6 +5,7 @@ Para este exercício, tirei inspiração do exercício dado como exemplo pelo pr
 Exercício do professor de referência:
 
 '''
+
  if (mouseX < width/2) {
     if (mouseY > height/2) {
       fill(255, 0, 0);
@@ -21,6 +22,7 @@ Exercício do professor de referência:
 
   strokeWeight(random(2, 20));
   circle(width/2, height/2, height/4); 
+
 '''
 
 ---
@@ -32,6 +34,7 @@ Começei por escrever a mensagem que fica visivel sempre no ecrã "Passa por cim
 Para conseguir fazer o reconhecimento dos quadrados, tornei-os primeiro numa variável, porém estava a ter dificuldades em desenha-los depois de os defenir com a variável, então perguntei ao Copilot integrado no VS Code e este foi o resultado:
 
 '''
+
 let lightPinkSquare;
 
 function setup() {
@@ -46,6 +49,7 @@ function draw() {
   fill(lightPink);
   square(lightPinkSquare.x, lightPinkSquare.y, lightPinkSquare.size, lightPinkSquare.radius);
 }
+
 '''
 O resultado foi defenir o lightPinkSquare e os seus valores separadamente na function setup. Então depois de ver como fazer e aplicar o processo, apliquei-o aos outros quadrados.
 
@@ -56,6 +60,7 @@ Para o hovering over do rato nos quadrados estava a ter dificuldades pois não c
 "Each else if tests one square. The size / 2 gives the distance from its center to an edge; the && means the mouse must be inside the square horizontally and vertically. draw() repeats these checks, so the background updates as you move the mouse."
 
 '''
+
 if (
   mouseX >= lightPinkSquare.x - lightPinkSquare.size / 2 &&
   mouseX <= lightPinkSquare.x + lightPinkSquare.size / 2 &&
@@ -79,5 +84,7 @@ if (
 } else {
   background(lightPink); // default when not hovering over a square
 }
+
 '''
+
 Dado que já estava o exercício a funcionar, mudei algumas coisas como a cor default do background e o tamanho dos quadrados.
